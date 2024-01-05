@@ -11,7 +11,9 @@ public class MessageSenderService {
     private QueueMessagingTemplate queueMessagingTemplate;
 
     public void send (String message){
-        queueMessagingTemplate.convertAndSend("Fila-Dois", message);
+        queueMessagingTemplate.convertAndSend("${cloud.aws.end-point.uri}", message);
     }
 
 }
+
+// SqsTemplate

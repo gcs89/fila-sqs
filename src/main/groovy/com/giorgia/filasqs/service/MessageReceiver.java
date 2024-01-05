@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageReceiver {
-    @SqsListener("Fila-Dois")
+    @SqsListener("${cloud.aws.end-point.uri}")
     public void receiveMessage(String message){
         System.out.println("Mensagem recebida: " + message);
     }
